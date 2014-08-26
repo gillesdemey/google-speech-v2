@@ -131,3 +131,10 @@ curl -X POST \
 --header 'Content-Type: audio/x-flac; rate=44100;' \
 'https://www.google.com/speech-api/v2/recognize?output=json&lang=en-us&key=yourkey'
 ```
+
+##Caveats
+
+Here are a few caveats you have to know about, should you decide to use this API in a production environment. (I don't recommend it)
+
+* The API only accepts up to ~10-15 seconds of audio.
+* Generating [your own Speech API Key](http://www.chromium.org/developers/how-tos/api-keys), you can only make 50 requests per day.
