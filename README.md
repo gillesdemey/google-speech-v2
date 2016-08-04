@@ -1,5 +1,10 @@
 #Google Speech API v2:
 
+## NOTICE
+
+Google has since launched it's official [Google Cloud Speech API](https://cloud.google.com/speech/). 
+I strongly recommend looking over there.
+
 ##Host:
 https://www.google.com/speech-api/v2/recognize
 
