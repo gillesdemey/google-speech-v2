@@ -1,14 +1,14 @@
-#Google Speech API v2:
+# Google Speech API v2:
 
 ## NOTICE
 
 Google has since launched it's official [Google Cloud Speech API](https://cloud.google.com/speech/). 
 I strongly recommend looking over there.
 
-##Host:
+## Host:
 https://www.google.com/speech-api/v2/recognize
 
-###Parameters
+### Parameters
 **output:** json, xml not supported.
 
 **lang:** any valid locale (en-us, nl-be, fr-fr, etc.)
@@ -23,9 +23,9 @@ You can specify an optional query string called ```app```, which returns some ex
 
 **client:** optional, seems to do nothing in particular
 
-##Data:
+## Data:
 
-###FLAC
+### FLAC
 Flac file; 44100Hz 32bit float, exported with Audacity. Check the audio folder in this repository for some hilarious examples.
 
 ```
@@ -35,7 +35,7 @@ Precision      : 32-bit
 Sample Encoding: 32-bit Float
 ```
 
-###16-bit PCM
+### 16-bit PCM
 
 The following audio options are confirmed working for 16-bit PCM sample encoding:
 
@@ -50,7 +50,7 @@ One-line sox recording command:
 
 `rec --encoding signed-integer --bits 16 --channels 1 --rate 16000 test.wav`
 
-###Headers:
+### Headers:
 **Content-Type:**
 
 ```Content-Type: audio/x-flac; rate=44100;```
@@ -65,7 +65,7 @@ Set the rate to be equal to the rate of the FLAC file (generally 44100Hz) but it
 
 not required, but for spoofing purposes use one of Chrome’s userAgent strings.
 
-###Response:
+### Response:
 
 When Google is 100% confident in it's translation, it will return the following object:
 
@@ -107,7 +107,7 @@ When it's doubtful, it adds a confidence parameter for you. It also seems to add
 }
 ```
 
-##Example
+## Example
 
 ### Install sox
 
@@ -137,7 +137,7 @@ curl -X POST \
 'https://www.google.com/speech-api/v2/recognize?output=json&lang=en-us&key=yourkey'
 ```
 
-##Caveats
+## Caveats
 
 Here are a few caveats you have to know about, should you decide to use this API in a production environment. (I don't recommend it)
 
